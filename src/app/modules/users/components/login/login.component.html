@@ -1,0 +1,28 @@
+<section class="login-container">
+  <div class="login">
+
+    <header class="login__header">
+      <h2>Login</h2>
+    </header>
+
+    <main class="login__content">
+      <form action="" class="login-form" [formGroup]="loginForm">
+        <div class="login-form__group" [ngClass]="{'error': validateInput(loginForm.get('email'))}">
+          <label for="email" class="form-label">E-mail</label>
+          <input type="text" formControlName="email" class="form-input">
+          <span class="form-error">Campo e-mail é obrigatório</span>
+        </div>
+        <div class="login-form__group" [ngClass]="{'error': validateInput(loginForm.get('password'))}">
+          <label for="password" class="form-label">Senha</label>
+          <input type="password" formControlName="password" class="form-input">
+          <span class="form-error">Campo senha é obrigatório</span>
+        </div>
+      </form>
+    </main>
+
+    <footer class="login__footer">
+      <button class="login-button" (click)="submit()" [disabled]="submitting || loginForm.invalid">Entrar</button>
+      <button class="login-link" (click)="goRegister()">Registre-se</button>
+    </footer>
+  </div>
+</section>

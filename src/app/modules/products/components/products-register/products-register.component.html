@@ -1,0 +1,32 @@
+<section class="product-register-container">
+  <div class="product-register">
+
+    <header class="product-register__header">
+      <h2>{{action}} {{actionComplement}}</h2>
+    </header>
+
+    <main class="product-register__content">
+      <form action="" class="product-register-form" [formGroup]="productForm">
+        <div class="product-register-form__group" [ngClass]="{'error': validateInput(productForm.get('name'))}">
+          <label for="name" class="form-label">Nome</label>
+          <input type="text" formControlName="name" class="form-input">
+          <span class="form-error">Campo nome é obrigatório</span>
+        </div>
+        <div class="product-register-form__group" [ngClass]="{'error': validateInput(productForm.get('quantity'))}">
+          <label for="quantity" class="form-label">Quantidade</label>
+          <input type="number" formControlName="quantity" class="form-input">
+          <span class="form-error">Campo quantidade é obrigatório</span>
+        </div>
+        <div class="product-register-form__group" [ngClass]="{'error': validateInput(productForm.get('value'))}">
+          <label for="value" class="form-label">Valor (R$)</label>
+          <input [imask]="MASK" type="text" formControlName="value" class="form-input">
+          <span class="form-error">Campo valor é obrigatório</span>
+        </div>
+      </form>
+    </main>
+
+    <footer class="product-register__footer">
+      <button class="product-register-button" (click)="submit()" [disabled]="submitting || productForm.invalid">Salvar</button>
+    </footer>
+  </div>
+</section>

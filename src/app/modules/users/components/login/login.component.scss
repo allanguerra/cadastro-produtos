@@ -1,0 +1,143 @@
+.login-container {
+
+  min-height: calc(100vh - 120px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    padding: 30px;
+
+    background-color: white;
+    border: 1px solid #343a40;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
+
+    &__header {
+      h2 {
+        color: #343a40;
+        font-size: 2em;
+      }
+    }
+
+    &__content {
+
+      width: 100%;
+      .login-form {
+        &__group {
+          display: flex;
+          flex-direction: column;
+
+          margin-top: 10px;
+
+          .form-label {
+            font-size: 1em;
+            font-weight: 600;
+            color: #343a40;
+          }
+
+          .form-input {
+            padding: 8px 16px;
+
+            border: 1px solid #343a40;
+            border-radius: 24px;
+            outline: none;
+          }
+
+          .form-error {
+            display: none;
+            font-size: .8em;
+            color: #ad2a2a;
+          }
+
+          &.error {
+            .form-label {
+              color: #ad2a2a
+            }
+            .form-input {
+              border: 1px solid #ad2a2a;
+            }
+            .form-error {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+    &__footer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      width: 100%;
+
+      .login-button {
+        display: block;
+        width: 100%;
+
+        padding: 8px 16px;
+        margin-top: 16px;
+
+        font-size: 1em;
+        font-weight: 700;
+        line-height: 22px;
+        color: #ffffff;
+
+        background-color: #00a160;
+        border: none;
+        border-radius: 24px;
+        outline: none;
+
+        transition: all ease-in .12s;
+
+        &:disabled {
+          cursor: not-allowed;
+
+          color: #cccccc;
+          border: none;
+          background-color: lighten(#cccccc, 10%);
+
+          &:hover {
+            color: #cccccc;
+            border: none;
+            background-color: lighten(#cccccc, 10%);
+          }
+        }
+
+        &:hover {
+          background-color: darken(#00a160, 10%);
+        }
+      }
+
+      .login-link {
+        background: none;
+        border: none;
+        outline: none;
+
+        padding: 8px 0;
+
+        font-size: 1em;
+        font-weight: 600;
+        color: #0565e3;
+
+        &:hover {
+          color: darken(#0565e3, 10%);
+        }
+      }
+    }
+
+    @media only screen and (min-width : 768px) {
+      width: 60%;
+    }
+
+    @media only screen and (min-width : 991px) {
+      width: 40%;
+    }
+  }
+}

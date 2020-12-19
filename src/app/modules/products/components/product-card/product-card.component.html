@@ -1,0 +1,21 @@
+<section class="product-card">
+  <div class="product-card__label">
+    <label class="card-label">Nome do Produto</label>
+    <span class="card-value">{{product?.name}}</span>
+  </div>
+  <div class="product-card__label">
+    <label class="card-label">Quantidade</label>
+    <span class="card-value">{{product?.quantity}}</span>
+  </div>
+  <div class="product-card__label">
+    <label class="card-label">Valor</label>
+    <span class="card-value">R$ {{product?.value}}</span>
+  </div>
+  <div class="product-card__label">
+    <label class="card-label">Ações</label>
+    <span class="card-actions">
+      <i (click)="updateProduct()" class="fas fa-pen"></i>
+      <i (click)="destroyProduct()" class="fas fa-trash"></i>
+    </span>
+  </div>
+</section>

@@ -1,0 +1,49 @@
+.product-list {
+  margin: 100px 0;
+  width: 100%;
+  padding: 30px;
+
+  background-color: white;
+  border: 1px solid #343a40;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
+
+  &__header {
+    display: flex;
+    justify-content: flex-end;
+
+    .add-product {
+      padding: 8px 16px;
+
+      font-size: 1em;
+      font-weight: 700;
+      line-height: 22px;
+      color: #ffffff;
+
+      background-color: #00a160;
+      border: none;
+      border-radius: 24px;
+      outline: none;
+
+      transition: all ease-in .12s;
+
+      &:disabled {
+        cursor: not-allowed;
+
+        color: #cccccc;
+        border: none;
+        background-color: lighten(#cccccc, 10%);
+
+        &:hover {
+          color: #cccccc;
+          border: none;
+          background-color: lighten(#cccccc, 10%);
+        }
+      }
+
+      &:hover {
+        background-color: darken(#00a160, 10%);
+      }
+    }
+  }
+}

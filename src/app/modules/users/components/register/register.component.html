@@ -1,0 +1,33 @@
+<section class="register-container">
+  <div class="register">
+
+    <header class="register__header">
+      <h2>Cadastre-se</h2>
+    </header>
+
+    <main class="register__content">
+      <form action="" class="register-form" [formGroup]="registerForm">
+        <div class="register-form__group" [ngClass]="{'error': validateInput(registerForm.get('email'))}">
+          <label for="name" class="form-label">Nome</label>
+          <input type="text" formControlName="name" class="form-input">
+          <span class="form-error">Campo nome é obrigatório</span>
+        </div>
+        <div class="register-form__group" [ngClass]="{'error': validateInput(registerForm.get('email'))}">
+          <label for="email" class="form-label">E-mail</label>
+          <input type="text" formControlName="email" class="form-input">
+          <span class="form-error">Campo e-mail é obrigatório</span>
+        </div>
+        <div class="register-form__group" [ngClass]="{'error': validateInput(registerForm.get('password'))}">
+          <label for="password" class="form-label">Senha</label>
+          <input type="password" formControlName="password" class="form-input">
+          <span class="form-error">Campo senha é obrigatório</span>
+        </div>
+      </form>
+    </main>
+
+    <footer class="register__footer">
+      <button class="register-button" (click)="submit()" [disabled]="submitting || registerForm.invalid">Cadastrar</button>
+      <button class="register-link" (click)="goLogin()">Login</button>
+    </footer>
+  </div>
+</section>

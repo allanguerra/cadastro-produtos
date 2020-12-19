@@ -1,0 +1,15 @@
+<section class="product-list">
+
+  <header class="product-list__header">
+    <button class="add-product" (click)="addProduct()">Adicionar Produto</button>
+  </header>
+
+  <main class="product-list__content">
+    <app-product-card
+      *ngFor="let product of products"
+      [product]="product"
+      (update)="update($event)"
+      (destroy)="destroy($event)"></app-product-card>
+  </main>
+
+</section>
